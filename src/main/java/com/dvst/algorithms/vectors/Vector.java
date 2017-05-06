@@ -1,4 +1,4 @@
-package com.dvst.algorithms.vectors;
+package main.java.com.dvst.algorithms.vectors;
 
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by durgesh on 5/2/17.
+ * Created by durgesh on 5/6/17.
  */
 public class Vector {
 
@@ -35,6 +35,10 @@ public class Vector {
         System.out.println("Angle in Radians : " + new Vector().getAngle(new Vector(Arrays.asList(7.35, 0.221, 5.188)), new Vector(Arrays.asList(2.751, 8.259, 3.985))));
         System.out.println("Angle in Degrees : " + new Vector().toDegrees(new Vector().getAngle(new Vector(Arrays.asList(7.35, 0.221, 5.188)), new Vector(Arrays.asList(2.751, 8.259, 3.985)))));
 
+        System.out.println("Is Orthogonal : " + new Vector().isOrthogonal(new Vector(Arrays.asList(-7.579, -7.88)), new Vector(Arrays.asList(22.737, 23.64))));
+        System.out.println("Is Orthogonal : " + new Vector().isOrthogonal(new Vector(Arrays.asList(-2.029, 9.97, 4.172)), new Vector(Arrays.asList(-9.231, -6.639, -7.245))));
+        System.out.println("Is Orthogonal : " + new Vector().isOrthogonal(new Vector(Arrays.asList(-2.328, -7.284, -1.214)), new Vector(Arrays.asList(-1.821, 1.072, -2.94))));
+        System.out.println("Is Orthogonal : " + new Vector().isOrthogonal(new Vector(Arrays.asList(2.118, 4.827)), new Vector(Arrays.asList(0.0, 0.0))));
     }
 
     public Vector(){
@@ -182,6 +186,17 @@ public class Vector {
         return result;
     }
 
+    public boolean isParallel(Vector v, Vector w){
+        return false;
+    }
+
+    public boolean isOrthogonal(Vector v, Vector w){
+        if(getDotProduct(v, w) == 0){
+            return true;
+        }
+        return false;
+    }
+
     private double round(double value){
         //return Math.round(value * 1000.0) / 1000.0;
         DecimalFormat df = new DecimalFormat("#.###");
@@ -207,4 +222,5 @@ public class Vector {
     public void setCoordinates(List<Double> coordinates) {
         this.coordinates = coordinates;
     }
+
 }
