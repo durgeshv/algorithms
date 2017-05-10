@@ -35,6 +35,11 @@ public class Vector {
         System.out.println("Angle in Radians : " + new Vector().getAngle(new Vector(Arrays.asList(7.35, 0.221, 5.188)), new Vector(Arrays.asList(2.751, 8.259, 3.985))));
         System.out.println("Angle in Degrees : " + new Vector().toDegrees(new Vector().getAngle(new Vector(Arrays.asList(7.35, 0.221, 5.188)), new Vector(Arrays.asList(2.751, 8.259, 3.985)))));
 
+        System.out.println("Is Parallel : " + new Vector().isParallel(new Vector(Arrays.asList(-7.579, -7.88)), new Vector(Arrays.asList(22.737, 23.64))));
+        System.out.println("Is Parallel : " + new Vector().isParallel(new Vector(Arrays.asList(-2.029, 9.97, 4.172)), new Vector(Arrays.asList(-9.231, -6.639, -7.245))));
+        System.out.println("Is Parallel : " + new Vector().isParallel(new Vector(Arrays.asList(-2.328, -7.284, -1.214)), new Vector(Arrays.asList(-1.821, 1.072, -2.94))));
+        System.out.println("Is Parallel : " + new Vector().isParallel(new Vector(Arrays.asList(2.118, 4.827)), new Vector(Arrays.asList(0.0, 0.0))));
+
         System.out.println("Is Orthogonal : " + new Vector().isOrthogonal(new Vector(Arrays.asList(-7.579, -7.88)), new Vector(Arrays.asList(22.737, 23.64))));
         System.out.println("Is Orthogonal : " + new Vector().isOrthogonal(new Vector(Arrays.asList(-2.029, 9.97, 4.172)), new Vector(Arrays.asList(-9.231, -6.639, -7.245))));
         System.out.println("Is Orthogonal : " + new Vector().isOrthogonal(new Vector(Arrays.asList(-2.328, -7.284, -1.214)), new Vector(Arrays.asList(-1.821, 1.072, -2.94))));
@@ -187,6 +192,15 @@ public class Vector {
     }
 
     public boolean isParallel(Vector v, Vector w){
+        //System.out.println(String.valueOf(getAngle(v, w)));
+        /*
+        if(getAngle(v, w) == 0.0){
+            return true;
+        }
+        else if(getAngle(v, w) == 180.00){
+            return true;
+        }
+        */
         return false;
     }
 
